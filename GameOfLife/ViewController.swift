@@ -39,9 +39,7 @@ class ViewController: UIViewController {
   }
   
   func initializeGame() {
-    for cell in life.cells {
-      cell.state = State.randomState()
-    }
+    life.cells = life.cells.map { $0.state = State.randomState(); return $0 }
   }
   
   func moment() {
@@ -51,7 +49,7 @@ class ViewController: UIViewController {
   }
   
   @IBAction func startGameTouched(_ sender: Any) {
-    timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.moment), userInfo: nil, repeats: true)
+    timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(ViewController.moment), userInfo: nil, repeats: true)
     print("timer", timer)
   }
   

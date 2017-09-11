@@ -20,3 +20,13 @@ extension Array {
     return neighbors
   }
 }
+
+extension Array {
+  func customMap(transform: (Element) -> Element) -> [Element] {
+    var result: [Element] = []
+    for item in self {
+      result.append(transform(item))
+    }
+    return result
+  }
+}
