@@ -39,7 +39,7 @@ class ViewController: UIViewController {
   }
   
   func initializeGame() {
-    life.cells = life.cells.map { $0.state = State.randomState(); return $0 }
+    life.cells.forEach { $0.state = State.randomState() }
   }
   
   func moment() {
