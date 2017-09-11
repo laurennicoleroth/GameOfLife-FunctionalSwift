@@ -37,13 +37,9 @@ class Life {
     let dyingCells = liveCells.filter { !(2...3 ~= livingNeighbors(cell: $0)) }
     let newLife = deadCells.filter { livingNeighbors(cell: $0) == 3}
     
-    for newCell in newLife {
-      newCell.state = .Living
-    }
+    newLife.forEach { $0.state = .Living }
     
-    for deadCell in dyingCells {
-      deadCell.state = .Dead
-    }
+    dyingCells.forEach { $0.state = .Dead }
   }
   
   func cellNeighbors(cell: Cell) -> [Cell] {
