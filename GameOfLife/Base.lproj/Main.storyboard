@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameOfLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8O6-6D-Wyz">
+                                <rect key="frame" x="-12.5" y="133.5" width="400" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="fKt-Pc-WKZ"/>
+                                    <constraint firstAttribute="width" constant="400" id="wtC-zV-aY9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxF-e3-0Wk">
+                                <rect key="frame" x="148" y="607" width="78" height="30"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="0.85892855420000003" green="0.1471166683" blue="0.99749447599999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGameTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JhR-9w-qiO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfY-xI-h5k">
+                                <rect key="frame" x="167.5" y="569" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="handleResetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gCz-iW-3iD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8O6-6D-Wyz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ihv-8i-mOb"/>
+                            <constraint firstItem="GfY-xI-h5k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MFn-fl-1X2"/>
+                            <constraint firstItem="nxF-e3-0Wk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RHZ-i5-H2R"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nxF-e3-0Wk" secondAttribute="bottom" constant="30" id="c7Y-qo-AEj"/>
+                            <constraint firstItem="8O6-6D-Wyz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j3u-YD-RsH"/>
+                            <constraint firstItem="nxF-e3-0Wk" firstAttribute="top" secondItem="GfY-xI-h5k" secondAttribute="bottom" constant="8" id="qM7-v5-guL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardView" destination="8O6-6D-Wyz" id="zCG-42-UoE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
