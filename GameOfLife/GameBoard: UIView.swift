@@ -35,11 +35,11 @@ class GameBoard: UIView {
   func colorForCell(state: State) -> UIColor {
     switch state {
     case .Living:
-      return UIColor(red: 54/255, green: 127/255, blue: 255/255, alpha: 1.0)
+      return UIColor.green
     case .PreBirth:
-      return UIColor(red: 0/255, green: 56/255, blue: 56/255, alpha: 1.0)
+      return UIColor.magenta
     case .Dead:
-      return UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 1.0)
+      return UIColor.black
     }
   }
   

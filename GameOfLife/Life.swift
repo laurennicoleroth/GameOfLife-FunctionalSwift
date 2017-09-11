@@ -10,7 +10,7 @@ import Foundation
 
 class Life {
   var cells: [Cell]
-  let gridSize: Int = 20
+  let grid = (0...20)
   
   init() {
     cells = [Cell]()
@@ -18,15 +18,8 @@ class Life {
   }
   
   lazy var assignCellsToGrid : () -> [Cell] = {
-    [weak self] in
-  
-    var cells = [Cell]()
-    for xLoc in 0..<self!.gridSize {
-      for yLoc in 0..<self!.gridSize {
-        cells.append(Cell(x: xLoc, y: yLoc))
-      }
-    }
-    return cells
+    
+    return (0...20).flatMap { x in (0...20).map { Cell(x: x, y: $0) }}
     
   }
   
